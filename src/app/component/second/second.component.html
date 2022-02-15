@@ -1,0 +1,29 @@
+<h1>Who goes on sea</h1>
+<input type="text" placeholder="name" [(ngModel)]="name">
+<input type="text" placeholder="second name" [(ngModel)]="secondName">
+<button (click)="onAdd(name, secondName)">Set onathe name</button>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Second name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let person of persons">
+      <div [style.backgroundColor]="isBackGround ? 'green': 'red'">
+        <td>{{person.name}}</td>
+        <td>{{person.secondName}}</td>
+        <td><input type="checkbox" [checked]="isBackGround"></td>
+      </div>
+    </tr>
+  </tbody>
+
+</table>
+
+<div>
+  <p [class.color]="color">Increase: {{count}}</p>
+  <button (click)="increse()">Plus</button>
+  <button (click)="change()">Chanche Color</button>
+</div>

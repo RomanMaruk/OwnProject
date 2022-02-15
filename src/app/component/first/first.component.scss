@@ -1,0 +1,25 @@
+.container {
+  padding-left: 20px;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-column: auto;
+  grid-row: 0.5fr auto;
+  position: relative;
+  &__nav {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #000;
+    
+  }
+}
+.hamburger__icon {
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+}
+.side-menu__conteiner-active {
+  pointer-events: auto;
+}
+
+

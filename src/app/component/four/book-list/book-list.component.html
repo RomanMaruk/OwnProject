@@ -1,0 +1,7 @@
+<div class="books" *ngFor="let book of books">
+  <p>{{book.volumeInfo.title}} <span>{{book.volumeInfo.authors}}</span></p>
+  <button
+    (click)="add.emit(book.id)"
+    data-set="add-button"
+  >Add to colection</button>
+</div>

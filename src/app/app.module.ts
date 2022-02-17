@@ -21,6 +21,10 @@ import { SecondComponent } from './component/second/second.component';
 import { ThreeComponent } from './component/three/three.component';
 import { FourComponent } from './component/four/four.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BookCollectionComponent } from './component/four/book-collection/book-collection.component';
+import { BookListComponent } from './component/four/book-list/book-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { GoogleBooksServices } from './services/book-list.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FirstComponent,
     SecondComponent,
     ThreeComponent,
-    FourComponent
+    FourComponent,
+    BookCollectionComponent,
+    BookListComponent
   ],
   imports: [
     BrowserModule,
@@ -44,8 +50,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       books: booksReducer,
       collection: collectionReducer
     }),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [GoogleBooksServices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -25,6 +25,9 @@ import { BookCollectionComponent } from './component/four/book-collection/book-c
 import { BookListComponent } from './component/four/book-list/book-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GoogleBooksServices } from './services/book-list.service';
+import { NavComponent } from './component/nav/nav.component';
+import { ModalComponent } from './component/modal/modal.component';
+import { ToolbarComponent } from './component/toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { GoogleBooksServices } from './services/book-list.service';
     ThreeComponent,
     FourComponent,
     BookCollectionComponent,
-    BookListComponent
+    BookListComponent,
+    NavComponent,
+    ModalComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,

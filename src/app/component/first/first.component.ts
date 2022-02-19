@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./first.component.scss']
 })
 export class FirstComponent implements OnInit {
-
+  title = 'First INput'
+  modal = false;
   constructor() { }
 
   ngOnInit(): void {

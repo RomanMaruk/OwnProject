@@ -1,0 +1,19 @@
+.container {
+  margin: 0 auto;
+}
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1300px;
+  padding: 0 10px;
+  box-shadow: 0px 14px 19px 4px rgba(34, 60, 80, 0.36);
+  margin: 0 auto;
+  background-color: rgb(109 168 189 / 22%);
+}
+
+.svg, .hamburger__icon{
+  height: 35px;
+  width: 35px;
+  padding: 0;
+  margin: auto 0;
+}

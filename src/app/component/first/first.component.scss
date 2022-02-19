@@ -1,10 +1,10 @@
 .container {
-  padding-left: 20px;
+  // padding-left: 20px;
   width: 100vw;
   height: 100vh;
   display: grid;
   grid-column: auto;
-  grid-row: 0.5fr auto;
+  grid-row: 1fr auto;
   position: relative;
   &__nav {
     display: flex;

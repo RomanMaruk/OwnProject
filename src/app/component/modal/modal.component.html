@@ -1,0 +1,9 @@
+<div class="backdrop"></div>
+
+<div class="modal">
+  <img src="http://openweathermap.org/img/wn/{{currentWheher.icon}}" alt="">
+  <p>{{currentWheher.description}}</p>
+  <nav>First modal</nav>
+  <h4>{{ title }}</h4>
+  <button class="btn" (click)="close.emit()">Close modal</button>
+</div>

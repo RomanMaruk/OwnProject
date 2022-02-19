@@ -1,0 +1,30 @@
+.backdrop {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .3);
+  position: fixed;
+  z-index: 20;
+}
+
+.modal {
+  // position: absolute;
+  // left: 50%;
+  // top: 50%;
+  // margin-left: -200px;
+  // margin-top: -292px;
+  background: #fff;
+  width: 400px;
+  padding: 50px;
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 21;
+}
+
+.btn {
+  cursor: pointer;
+}

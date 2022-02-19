@@ -1,8 +1,5 @@
-import { PlatformLocation } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { Routes } from '@angular/router';
-import { Observable, Observer } from 'rxjs';
-import { routes } from '../../app-routing.module';
+import { WhetherService } from 'src/app/services/whether/whether.service';
 
 @Component({
   selector: 'app-main',
@@ -12,10 +9,7 @@ import { routes } from '../../app-routing.module';
 
 export class MainComponent implements OnInit {
 
-  links: any = routes.filter(item => item.path !== '')
-  activeLink = this.pLocation.hash.slice(1);
-
-  constructor(private pLocation: PlatformLocation) {
+  constructor(private whetherService: WhetherService) {
   }
 
   ngOnInit(): void {

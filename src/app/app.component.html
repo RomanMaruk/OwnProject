@@ -3,6 +3,33 @@
     <app-toolbar></app-toolbar>
   </div>
   <div class="content">
+    <app-side-nav></app-side-nav>
     <router-outlet></router-outlet>
   </div>
 </div>
+
+
+<!-- <ng-container>
+  <mat-toolbar class="example-header">Header
+    <p><button mat-button (click)="sidenav.toggle()">Toggle</button></p>
+  </mat-toolbar>
+  <app-toolbar></app-toolbar>
+
+  <mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav mode="side" opened class="example-sidenav"
+                 [fixedInViewport]="true" [fixedTopGap]="0"
+                 [fixedBottomGap]="0">
+                 <p><button mat-button (click)="sidenav.toggle()">Toggle</button></p>
+      
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+     <h2>Side bar</h2>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+  <mat-toolbar class="example-footer">Footer</mat-toolbar>
+</ng-container> -->
+
+
+

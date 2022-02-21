@@ -7,14 +7,19 @@
   <button (click)="reset()">Reset</button>
 </div>
 
-<div>
-  <h2>Books</h2>
-  <app-book-list
-    [books]="books$ | async" (add)="onAdd($event)"
-  ></app-book-list>
-  <h2>Colection Book</h2>
-  <app-book-collection
-    [books]="booksColection$ | async"
-    (remove)="onRemove($event)"
-  ></app-book-collection>
+<div class="wrap-books">
+  <div class="list-books">
+    <h2>Books</h2>
+    <app-book-list
+      [books]="books$ | async" (add)="onAdd($event)"
+    ></app-book-list>
+  </div>
+
+  <div class="list-colection">
+    <h2>Colection Book</h2>
+    <app-book-collection
+      [books]="booksColection$ | async"
+      (remove)="onRemove($event)"
+    ></app-book-collection>
+  </div>
 </div>

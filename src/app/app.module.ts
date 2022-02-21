@@ -11,6 +11,10 @@ import { collectionReducer } from './store/books/collectionBook.reducer';
 // Angular material
 import { MatSliderModule } from '@angular/material/slider';
 import { MatTabsModule } from '@angular/material/tabs';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatIconModule} from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
+
 
 // Coponent
 import { AppRoutingModule } from './app-routing.module';
@@ -28,6 +32,8 @@ import { GoogleBooksServices } from './services/book-list.service';
 import { NavComponent } from './component/nav/nav.component';
 import { ModalComponent } from './component/modal/modal.component';
 import { ToolbarComponent } from './component/toolbar/toolbar.component';
+import { SideNavComponent } from './component/side-nav/side-nav.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
@@ -41,7 +47,8 @@ import { ToolbarComponent } from './component/toolbar/toolbar.component';
     BookListComponent,
     NavComponent,
     ModalComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    SideNavComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +58,10 @@ import { ToolbarComponent } from './component/toolbar/toolbar.component';
     MatSliderModule,
     MatTabsModule,
     FormsModule,
+    MatNativeDateModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatToolbarModule,
     StoreModule.forRoot({ 
       count: counterReducer,
       books: booksReducer,

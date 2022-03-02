@@ -34,6 +34,7 @@ import { ModalComponent } from './component/modal/modal.component';
 import { ToolbarComponent } from './component/toolbar/toolbar.component';
 import { SideNavComponent } from './component/side-nav/side-nav.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { ForNodeComponent } from './component/for-node/for-node.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     NavComponent,
     ModalComponent,
     ToolbarComponent,
-    SideNavComponent
+    SideNavComponent,
+    ForNodeComponent
   ],
   imports: [
     BrowserModule,

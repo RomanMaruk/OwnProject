@@ -9,12 +9,13 @@ import { routes } from '../../app-routing.module';
 })
 export class NavComponent implements OnInit {
 
-  links: any = routes.filter(item => item.path !== '');
+  // links: any = routes.filter(item => item.path !== '');
+  links: any = routes[0].children;
   activeLink = this.pLocation.hash.slice(1);
 
   constructor(private pLocation: PlatformLocation) {
   }
-
+  location: any = this.pLocation;
   ngOnInit(): void {
   }
 

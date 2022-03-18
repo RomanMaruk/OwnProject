@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { PlatformLocation } from '@angular/common';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { WhetherService } from 'src/app/services/whether/whether.service';
 
 @Component({
@@ -9,10 +10,10 @@ import { WhetherService } from 'src/app/services/whether/whether.service';
 
 export class MainComponent implements OnInit {
 
-  constructor(private whetherService: WhetherService) {
-  }
+  constructor(private whetherService: WhetherService) {}
 
   ngOnInit(): void {
+
   }
 
 }

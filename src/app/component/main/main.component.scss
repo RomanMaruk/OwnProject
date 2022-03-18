@@ -1,4 +1,16 @@
 .wrap {
   width: 1300px;
   color: #fff;
+  border: #fff solid 1px;
+  padding: 10px;
+}
+
+.router__outlet H1 {
+  display: flex;
+  justify-content: center;
+  color: pink;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  border-bottom: #f57c7c 1px dashed;
+  padding-bottom: 20px;
 }

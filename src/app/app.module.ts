@@ -12,11 +12,15 @@ import { collectionReducer } from './store/books/collectionBook.reducer';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatTabsModule } from '@angular/material/tabs';
 import {MatNativeDateModule} from '@angular/material/core';
+import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 
+// Modules
+import { MedlinModule } from './medlin/medlin.module';
 
-// Coponent
+
+// Component
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './component/main/main.component';
@@ -33,8 +37,8 @@ import { NavComponent } from './component/nav/nav.component';
 import { ModalComponent } from './component/modal/modal.component';
 import { ToolbarComponent } from './component/toolbar/toolbar.component';
 import { SideNavComponent } from './component/side-nav/side-nav.component';
-import {MatSidenavModule} from '@angular/material/sidenav';
 import { ForNodeComponent } from './component/for-node/for-node.component';
+import { LoginComponent } from './component/login/login.component';
 
 @NgModule({
   declarations: [
@@ -50,9 +54,11 @@ import { ForNodeComponent } from './component/for-node/for-node.component';
     ModalComponent,
     ToolbarComponent,
     SideNavComponent,
-    ForNodeComponent
+    ForNodeComponent,
+    LoginComponent
   ],
   imports: [
+    MedlinModule,
     BrowserModule,
     CommonModule,
     AppRoutingModule,

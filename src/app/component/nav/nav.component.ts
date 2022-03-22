@@ -1,5 +1,7 @@
 import { PlatformLocation } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { Event, Router, RouterEvent } from '@angular/router';
+import { filter } from 'rxjs';
 import { routes } from '../../app-routing.module';
 
 @Component({
@@ -13,10 +15,11 @@ export class NavComponent implements OnInit {
   links: any = routes[0].children;
   activeLink = this.pLocation.hash.slice(1);
 
-  constructor(private pLocation: PlatformLocation) {
+  constructor(private pLocation: PlatformLocation, private router: Router) {
   }
   location: any = this.pLocation;
   ngOnInit(): void {
+   
   }
 
 }

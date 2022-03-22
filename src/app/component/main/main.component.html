@@ -1,5 +1,8 @@
 <div class="wrap">
-  <h2>Main page</h2>
+  <div *ngIf="FB">User is logged in</div>
+  <div *ngIf="!FB">User is not logged in</div>
+  
+  <!-- <h2>Main page</h2>
   <h3>For node create</h3>
 
   <form>
@@ -9,7 +12,7 @@
     <input type="text" placeholder="Surname">
   
     <input type="submit" value="Submit">
-  </form>
+  </form> -->
 
 </div>
 <div class="router__outlet">

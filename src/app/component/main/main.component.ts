@@ -1,6 +1,7 @@
-import { PlatformLocation } from '@angular/common';
-import { Component, OnChanges, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { WhetherService } from 'src/app/services/whether/whether.service';
+
 
 @Component({
   selector: 'app-main',
@@ -10,10 +11,12 @@ import { WhetherService } from 'src/app/services/whether/whether.service';
 
 export class MainComponent implements OnInit {
 
-  constructor(private whetherService: WhetherService) {}
+  FB: boolean = !!this.fbAuth.user
+
+constructor(private whetherService: WhetherService, private fbAuth: AngularFireAuth) {}
 
   ngOnInit(): void {
-
+    
   }
 
 }

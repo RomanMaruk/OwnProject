@@ -3,8 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { FirstComponent } from './component/first/first.component';
 import { FourComponent } from './component/four/four.component';
+import { LoginComponent } from './component/login/login.component';
 import { MainComponent } from './component/main/main.component';
 import { ModalComponent } from './component/modal/modal.component';
+import { RegisterComponent } from './component/register/register.component';
 import { SecondComponent } from './component/second/second.component';
 import { ThreeComponent } from './component/three/three.component';
 import { HomePageComponent } from './medlin/componets/home-page/home-page.component';
@@ -29,7 +31,8 @@ export const routes: Routes = [
     {path: 'third', component: ThreeComponent, data: {label: 'Three'}},
     {path: 'four', component: FourComponent, data: {label: 'Books-Count Ngrx'}},
   ]},
-
+  {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent}
 ];
 
 @NgModule({

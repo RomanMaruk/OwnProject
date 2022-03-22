@@ -1,8 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 
 import { counterReducer } from './store/counter.reducer';
 import { booksReducer } from './store/books/books.redcer';
@@ -15,6 +21,9 @@ import {MatNativeDateModule} from '@angular/material/core';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatCardModule} from '@angular/material/card';
+import {MatFormFieldModule } from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 // Modules
 import { MedlinModule } from './medlin/medlin.module';
@@ -39,6 +48,7 @@ import { ToolbarComponent } from './component/toolbar/toolbar.component';
 import { SideNavComponent } from './component/side-nav/side-nav.component';
 import { ForNodeComponent } from './component/for-node/for-node.component';
 import { LoginComponent } from './component/login/login.component';
+import { RegisterComponent } from './component/register/register.component';
 
 @NgModule({
   declarations: [
@@ -55,21 +65,31 @@ import { LoginComponent } from './component/login/login.component';
     ToolbarComponent,
     SideNavComponent,
     ForNodeComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     MedlinModule,
     BrowserModule,
     CommonModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSliderModule,
     MatTabsModule,
+    MatCardModule,
+    MatInputModule,
     FormsModule,
     MatNativeDateModule,
     MatIconModule,
     MatSidenavModule,
+    MatFormFieldModule,
     MatToolbarModule,
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(environment.firebase),
     StoreModule.forRoot({ 
       count: counterReducer,
       books: booksReducer,

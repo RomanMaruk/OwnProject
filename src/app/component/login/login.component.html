@@ -1,1 +1,22 @@
-<p>login works!</p>
+<div>
+	<h2>Login In</h2>
+	<form class="form" [formGroup]="user" (ngSubmit)="submitUser()">
+		<div class="wrap-input">
+			<div class="label">
+				<label for="email">Email</label>
+			</div>
+			<input type="email" formControlName="email">
+		</div>
+		
+		<div class="wrap-input">
+			<div class="label">
+				<label for="password">Password</label>
+			</div>
+			<input type="password" formControlName="password">
+		</div>
+
+		<div class="wrap-input">
+		<input class="btn" type="submit" value="Submit">
+		</div>
+	</form>
+</div>

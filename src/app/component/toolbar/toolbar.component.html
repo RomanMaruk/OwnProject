@@ -5,8 +5,9 @@
       <h5>Whether</h5>
     </div>
     <div class="log">
-      <p><a [routerLink]="'/login'">Log in</a></p>
-      <p>Register</p>
+      <button *ngIf="!logIn" [routerLink]="'/login'">Log in</button>
+      <button *ngIf="!logIn" [routerLink]="'/register'">Register</button>
+      <button *ngIf="logIn" (click)="logOut()">Log Out</button>
     </div>
   </div>
 </div>

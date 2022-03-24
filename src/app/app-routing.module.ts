@@ -8,7 +8,7 @@ import { MainComponent } from './component/main/main.component';
 import { ModalComponent } from './component/modal/modal.component';
 import { RegisterComponent } from './component/register/register.component';
 import { SecondComponent } from './component/second/second.component';
-import { ThreeComponent } from './component/three/three.component';
+import { ThreeComponent } from './component/zoo/three.component';
 import { HomePageComponent } from './medlin/componets/home-page/home-page.component';
 import { PostPageComponent } from './medlin/componets/post-page/post-page.component';
 import { MainLayoutComponent } from './medlin/shared/components/main-layout/main-layout.component';
@@ -28,7 +28,7 @@ export const routes: Routes = [
       data: {label: 'First'}
     },
     {path: 'second', component: SecondComponent, data: {label: 'Second'}},
-    {path: 'third', component: ThreeComponent, data: {label: 'Three'}},
+    {path: 'third', component: ThreeComponent, data: {label: 'Zoo'}},
     {path: 'four', component: FourComponent, data: {label: 'Books-Count Ngrx'}},
   ]},
   {path: 'login', component: LoginComponent},

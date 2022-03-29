@@ -25,6 +25,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {MatTableModule} from '@angular/material/table';
 
 // Modules
 import { MedlinModule } from './medlin/medlin.module';
@@ -54,6 +56,8 @@ import { SideNavComponent } from './component/side-nav/side-nav.component';
 import { ForNodeComponent } from './component/for-node/for-node.component';
 import { LoginComponent } from './component/login/login.component';
 import { RegisterComponent } from './component/register/register.component';
+import { DesignutilityService } from './services/NgxsPractica/sesignutility-service.service';
+import { EditUsersState } from './store/editUser/editUser.state';
 
 @NgModule({
   declarations: [
@@ -90,12 +94,14 @@ import { RegisterComponent } from './component/register/register.component';
     MatSidenavModule,
     MatFormFieldModule,
     MatToolbarModule,
+    MatButtonModule,
+    MatTableModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebase),
-    NgxsModule.forRoot([AnimalsState /* State put here */], {
+    NgxsModule.forRoot([AnimalsState, EditUsersState /* State put here */], {
       developmentMode: !environment.production
     }),
     NgxsLoggerPluginModule.forRoot(),
@@ -107,7 +113,7 @@ import { RegisterComponent } from './component/register/register.component';
     }),
     HttpClientModule
   ],
-  providers: [GoogleBooksServices],
+  providers: [GoogleBooksServices, DesignutilityService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

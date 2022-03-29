@@ -1,29 +1,164 @@
-<h1>Who goes on sea</h1>
-<input type="text" placeholder="name" [(ngModel)]="name">
-<input type="text" placeholder="second name" [(ngModel)]="secondName">
-<button (click)="onAdd(name, secondName)">Set onathe name</button>
+<!-- <div class="container-fluid">
+  <h2 style="text-decoration: underline;">Getting started with NGXS</h2>
+  <div class="row my-4">
+    <div class="col-md-3">
+      <h5 style="color: grey;">Add new user to State</h5>
+      <form [formGroup]="userForm" (ngSubmit)="addUser()">
+        <label class="form-label">ID</label>
+        <input type="text" class="form-control mb-2" placeholder="User ID" formControlName="id">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control mb-2" placeholder="Enter Name" formControlName="name">
+        <label class="form-label">Username</label>
+        <input type="text" class="form-control mb-2" placeholder="Enter a unique username" formControlName="userName">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control mb-2" placeholder="example@abcd.com" formControlName="email">
+        <label class="form-label">Phone</label>
+        <input type="number" class="form-control mb-2" placeholder="Enter Contact No." formControlName="phone">
+        <label class="form-label">Website</label>
+        <input type="email" class="form-control mb-2" placeholder="Enter website name" formControlName="webSite">
+        <button type="submit" class="btn btn-primary btn-sm mt-2">Add User</button>
+      </form>
+    </div>
+    <div class="col-md-9">
+      <h5 style="color: grey;">User Information</h5>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Username</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Website</th>
+            <th scope="col">Update</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let contents of userInfo; index as i">
+            <th scope="row">{{contents.id}}</th>
+            <td>{{contents.name}}</td>
+            <td>{{contents.username}}</td>
+            <td>{{contents.email}}</td>
+            <td>{{contents.phone}}</td>
+            <td>{{contents.website}}</td>
+            <td><button class="btn btn-outline-warning btn-sm" (click)="updateUser(contents.id,i)"><i
+                  class="bi bi-pencil-fill"></i></button></td>
+            <td><button class="btn btn-danger btn-sm" (click)="deleteUser(contents.id)"><i
+                  class="bi bi-trash-fill"></i></button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div> -->
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Second name</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let person of persons">
-      <div [style.backgroundColor]="isBackGround ? 'green': 'red'">
-        <td>{{person.name}}</td>
-        <td>{{person.secondName}}</td>
-        <td><input type="checkbox" [checked]="isBackGround"></td>
+
+<div class="container">
+  <div class="form-group">
+    <form [formGroup]="userForm" class="formGroup" (submit)="addUser()">
+      <mat-form-field appearance="fill">
+        <mat-label>Enter Id</mat-label>
+        <input matInput placeholder="Id number" formControlName="id" required>
+        <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Enter full name</mat-label>
+        <input matInput placeholder="Full name" formControlName="name" required>
+        <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Enter user name</mat-label>
+        <input matInput placeholder="user name" formControlName="username" required>
+        <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your email</mat-label>
+        <input matInput placeholder="pat@example.com" formControlName="email" required>
+        <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Telephone</mat-label>
+        <span matPrefix>+38 &nbsp;</span>
+        <input type="tel"  formControlName="phone" matInput placeholder="097-23-23-234">
+        <mat-icon matSuffix>mode_edit</mat-icon>
+      </mat-form-field>
+
+      <div class="btn">
+        <!-- <input class="btn__submit" type="button" value="Submit"> -->
+        <!-- <input mat-flat-button color="primary" type="submit" value="Submit"> -->
+        <button class="btn" mat-flat-button color="primary">Submit</button>
       </div>
-    </tr>
-  </tbody>
 
-</table>
+    </form>
+  </div>
 
-<div>
-  <p [class.color]="color">Increase: {{count}}</p>
-  <button (click)="increse()">Plus</button>
-  <button (click)="change()">Chanche Color</button>
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Username</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Update</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let contents of userInfo; index as i">
+          <th scope="row">{{contents.id}}</th>
+          <td>{{contents.name || contents.name}}</td>
+          <td>{{contents.username}}</td>
+          <td>{{contents.email}}</td>
+          <td>{{contents.phone}}</td>
+          <td><button class="btn btn-outline-warning btn-sm" (click)="updateUser(contents.id,i)">up</button></td>
+          <td><button class="btn btn-danger btn-sm" (click)="deleteUser(contents.id)">del</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<!-- 
+  <div>
+    <table mat-table [dataSource]="userInfo">
+      <ng-container matColumnDef="Id">
+        <th mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let obj">{{obj.id}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Full Name">
+        <th mat-header-cell *matHeaderCellDef>Full Name</th>
+        <td mat-cell *matCellDef="let obj">{{obj.fullName}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="User Name">
+        <th mat-header-cell *matHeaderCellDef>User Name</th>
+        <td mat-cell *matCellDef="let obj">{{obj.userName}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Email">
+        <th mat-header-cell *matHeaderCellDef>Email</th>
+        <td mat-cell *matCellDef="let obj">{{obj.email}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Phone">
+        <th mat-header-cell *matHeaderCellDef>Phone</th>
+        <td mat-cell *matCellDef="let obj">{{obj.phone}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Update">
+        <th mat-header-cell *matHeaderCellDef>Update</th>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div> -->
+
 </div>

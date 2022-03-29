@@ -1,3 +1,36 @@
 .color {
   color: red;
 }
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+}
+
+.btn {
+  display: block;
+  margin: 0 auto;
+}
+
+.btn__submit{
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background-color: rgb(132, 230, 230);
+  color: rgb(197, 40, 40);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 180%;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  table {
+    margin-left: 20px;
+  }
+}

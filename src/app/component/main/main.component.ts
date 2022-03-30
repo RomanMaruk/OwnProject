@@ -18,7 +18,7 @@ import { CreateUsersState } from 'src/app/store/createUsers/createUsers.state';
 export class MainComponent implements OnInit {
 
   @Select(CreateUsersState.getCreateUsers)
-  users$: Observable<any>
+  users$: Observable<any> // need add type but I don't know which
 
   userData: FormGroup = new FormGroup({
     name: new FormControl('', Validators.required,),

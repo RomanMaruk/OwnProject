@@ -58,6 +58,8 @@ import { LoginComponent } from './component/login/login.component';
 import { RegisterComponent } from './component/register/register.component';
 import { DesignutilityService } from './services/NgxsPractica/sesignutility-service.service';
 import { EditUsersState } from './store/editUser/editUser.state';
+import { CreateUsersState } from './store/createUsers/createUsers.state';
+import { appState } from './store/app.state';
 
 @NgModule({
   declarations: [
@@ -101,7 +103,7 @@ import { EditUsersState } from './store/editUser/editUser.state';
     AngularFireStorageModule,
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebase),
-    NgxsModule.forRoot([AnimalsState, EditUsersState /* State put here */], {
+    NgxsModule.forRoot(appState, {
       developmentMode: !environment.production
     }),
     NgxsLoggerPluginModule.forRoot(),

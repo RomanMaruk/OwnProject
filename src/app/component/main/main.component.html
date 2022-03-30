@@ -1,18 +1,27 @@
 <div class="wrap">
-  <div *ngIf="FB">User is logged in</div>
-  <div *ngIf="!FB">User is not logged in</div>
-  
-  <!-- <h2>Main page</h2>
-  <h3>For node create</h3>
+  <h2>Main page</h2>
 
-  <form>
-    <label for="name">Name</label>
-    <input type="text" placeholder="name">
-    <label for="surname">Surname</label>
-    <input type="text" placeholder="Surname">
-  
-    <input type="submit" value="Submit">
-  </form> -->
+  <div class="wrap-field">
+    <form class="form" [formGroup]="userData" (ngSubmit)="createUsers()">
+      <mat-form-field>
+        <mat-label>User Name</mat-label>
+        <input formControlName="name" matInput placeholder="Roman Maruk">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>User Email</mat-label>
+        <input formControlName="emailUser" matInput placeholder="wer@gmai.com">
+      </mat-form-field>
+
+      <input type="submit" value="Submit">
+    </form>
+    <ol *ngIf="(users$ | async).length > 0; else show">
+      <li *ngFor="let item of users$ | async"><span>{{item.name}}</span> - {{item.emailUser}}</li>
+    </ol>
+    <ng-template #show>
+      <h4>No users</h4>
+    </ng-template>
+  </div>
+
 
 </div>
 <div class="router__outlet">

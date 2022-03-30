@@ -3,6 +3,16 @@
   color: #fff;
   border: #fff solid 1px;
   padding: 10px;
+  .wrap-field{
+    display: flex;
+    flex-direction: row;
+    ol {
+      border: solid 1px #a09b6dd7;
+      li {
+        padding: 10px;
+      }
+    }
+  }
 }
 
 .router__outlet H1 {
@@ -13,4 +23,13 @@
   margin-bottom: 30px;
   border-bottom: #f57c7c 1px dashed;
   padding-bottom: 20px;
+}
+
+.form {
+  margin-right: 50px;
+  border: solid 1px #a09b6dd7;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
 }

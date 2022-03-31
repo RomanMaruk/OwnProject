@@ -1,13 +1,19 @@
 <div class="container">
-  <div class="wrap">
-    <button class="menu-btn"><mat-icon class="icon">menu</mat-icon></button>
-    <div class="whether">
-      <h5>Whether</h5>
+  <div class="wraper">
+    <div class="wrap">
+      <button class="menu-btn"><mat-icon class="icon">menu</mat-icon></button>
+      <div class="whether">
+        <h5>Whether</h5>
+      </div>
+      <div class="log">
+        <button *ngIf="!logIn" [routerLink]="'/login'">Log in</button>
+        <button *ngIf="!logIn" [routerLink]="'/register'">Register</button>
+        <button *ngIf="logIn" (click)="logOut()">Log Out</button>
+      </div>
+
     </div>
-    <div class="log">
-      <button *ngIf="!logIn" [routerLink]="'/login'">Log in</button>
-      <button *ngIf="!logIn" [routerLink]="'/register'">Register</button>
-      <button *ngIf="logIn" (click)="logOut()">Log Out</button>
+    <div>
+      <app-nav></app-nav>
     </div>
   </div>
 </div>

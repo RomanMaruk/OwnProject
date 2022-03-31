@@ -60,6 +60,8 @@ import { DesignutilityService } from './services/NgxsPractica/sesignutility-serv
 import { EditUsersState } from './store/editUser/editUser.state';
 import { CreateUsersState } from './store/createUsers/createUsers.state';
 import { appState } from './store/app.state';
+import { MealDBService } from './services/mealServices/meal-db.service';
+import { MealComponent } from './component/meal/meal.component';
 
 @NgModule({
   declarations: [
@@ -77,7 +79,8 @@ import { appState } from './store/app.state';
     SideNavComponent,
     ForNodeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    MealComponent
   ],
   imports: [
     MedlinModule,
@@ -115,7 +118,7 @@ import { appState } from './store/app.state';
     }),
     HttpClientModule
   ],
-  providers: [GoogleBooksServices, DesignutilityService],
+  providers: [GoogleBooksServices, DesignutilityService, MealDBService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,8 @@
+<p>meal works!</p>
+<ol>
+	<li *ngFor="let item of categoriesOfMeal">
+		{{item.strCategory}}
+		<img src={{item.strCategoryThumb}} alt="">
+		<p>{{item.strCategoryDescription}}</p>
+	</li>
+</ol>

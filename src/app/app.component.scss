@@ -1,11 +1,11 @@
 .container {
   background-image: url(../assets/granit-black.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  position: fixed;
+  // background-repeat: no-repeat;
+  // background-position: center;
+  // background-size: cover;
+  // position: fixed;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 }
 .content {
   width: 1300px;

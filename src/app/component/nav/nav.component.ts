@@ -1,7 +1,7 @@
 import { PlatformLocation } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { Event, Router, RouterEvent } from '@angular/router';
-import { filter } from 'rxjs';
+import { Store } from '@ngxs/store';
+import { GetHeaderAction } from 'src/app/store/requst-data.action';
 import { routes } from '../../app-routing.module';
 
 @Component({
@@ -11,15 +11,19 @@ import { routes } from '../../app-routing.module';
 })
 export class NavComponent implements OnInit {
 
-  // links: any = routes.filter(item => item.path !== '');
   links: any = routes[0].children;
-  activeLink = this.pLocation.hash.slice(1);
+  activeLink = this.pLocation.pathname.slice(1);
 
-  constructor(private pLocation: PlatformLocation, private router: Router) {
-  }
+  constructor(private pLocation: PlatformLocation, private store: Store ) {}
+
   location: any = this.pLocation;
+
   ngOnInit(): void {
-   
+    
+  }
+
+  getCurrentUrl(title: string) {
+    this.store.dispatch(new GetHeaderAction(title))
   }
 
 }

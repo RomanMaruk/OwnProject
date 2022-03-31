@@ -5,6 +5,7 @@ import { FirstComponent } from './component/first/first.component';
 import { FourComponent } from './component/four/four.component';
 import { LoginComponent } from './component/login/login.component';
 import { MainComponent } from './component/main/main.component';
+import { MealComponent } from './component/meal/meal.component';
 import { ModalComponent } from './component/modal/modal.component';
 import { RegisterComponent } from './component/register/register.component';
 import { SecondComponent } from './component/second/second.component';
@@ -30,6 +31,7 @@ export const routes: Routes = [
     {path: 'second', component: SecondComponent, data: {label: 'Second'}},
     {path: 'third', component: ThreeComponent, data: {label: 'Zoo'}},
     {path: 'four', component: FourComponent, data: {label: 'Books-Count Ngrx'}},
+    {path: 'meal', component: MealComponent, data: {label: 'Meal'}}
   ]},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent}

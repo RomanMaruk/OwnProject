@@ -18,7 +18,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 // Angular material
 import { MatSliderModule } from '@angular/material/slider';
 import { MatTabsModule } from '@angular/material/tabs';
-import {MatNativeDateModule} from '@angular/material/core';
+import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -62,6 +62,7 @@ import { CreateUsersState } from './store/createUsers/createUsers.state';
 import { appState } from './store/app.state';
 import { MealDBService } from './services/mealServices/meal-db.service';
 import { MealComponent } from './component/meal/meal.component';
+import { MealFilteredByCategoryComponent } from './component/meal-filtered-by-category/meal-filtered-by-category.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +81,8 @@ import { MealComponent } from './component/meal/meal.component';
     ForNodeComponent,
     LoginComponent,
     RegisterComponent,
-    MealComponent
+    MealComponent,
+    MealFilteredByCategoryComponent
   ],
   imports: [
     MedlinModule,
@@ -101,6 +103,7 @@ import { MealComponent } from './component/meal/meal.component';
     MatToolbarModule,
     MatButtonModule,
     MatTableModule,
+    MatRippleModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule,

@@ -14,12 +14,20 @@ export class NavComponent implements OnInit {
   links: any = routes[0].children;
   activeLink = this.pLocation.pathname.slice(1);
 
+  titleNew: Array<any> = this.links.filter((obj: any) => obj.path == this.activeLink)
+
   constructor(private pLocation: PlatformLocation, private store: Store ) {}
 
   location: any = this.pLocation;
 
   ngOnInit(): void {
+    console.log(this.links, ' Links');
     
+    if(this.titleNew.length > 0) {
+      this.store.dispatch(new GetHeaderAction(this.titleNew[0].data.label))
+    } else {
+      this.store.dispatch(new GetHeaderAction('Main'))
+    }
   }
 
   getCurrentUrl(title: string) {

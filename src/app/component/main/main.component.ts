@@ -32,8 +32,6 @@ export class MainComponent implements OnInit {
 constructor(private store: Store, private router: Router) {}
 
   ngOnInit(): void {
-    console.log(this.router.url);
-    
   }
 
   createUsers() {

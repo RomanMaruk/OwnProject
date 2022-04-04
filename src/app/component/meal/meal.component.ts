@@ -1,9 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { MealCategoriesInterface } from 'src/app/model/meal/meal.interface';
-import { MealCategoriesAction } from 'src/app/store/meal/meal.action';
+import { appState } from 'src/app/store/app.state';
+import { MealCategoriesAction, MealFilteredByCategoryAction } from 'src/app/store/meal/meal.action';
 import { MealState } from 'src/app/store/meal/meal.state';
+import { GetHeaderAction } from 'src/app/store/requst-data.action';
 
 @Component({
   selector: 'app-meal',
@@ -11,18 +14,25 @@ import { MealState } from 'src/app/store/meal/meal.state';
   styleUrls: ['./meal.component.scss']
 })
 export class MealComponent implements OnInit {
+  title: string = 'Meal' // need for changing title
+  
   @Select(MealState.mealCategories)
   mealCategories$: Observable<MealCategoriesInterface[]>
 
-  constructor(private store: Store) { }
+  constructor(private store: Store, private router: Router) { }
 
   ngOnInit(): void {
-    this.store.dispatch(new MealCategoriesAction())
+    this.store.dispatch([new MealCategoriesAction(), new GetHeaderAction(this.title)])
   }
 
   takeCategories(filterCategories: MealCategoriesInterface) {
-    console.log(filterCategories.strCategory);
-    
+    this.store.dispatch(new MealFilteredByCategoryAction(filterCategories.strCategory))
+      .subscribe((response) => {
+        
+        this.router.navigate(['meal', filterCategories.strCategory])
+      })
+
+    this.store.dispatch(new GetHeaderAction(filterCategories.strCategory))
   }
 
 }

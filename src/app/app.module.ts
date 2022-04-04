@@ -63,6 +63,7 @@ import { appState } from './store/app.state';
 import { MealDBService } from './services/mealServices/meal-db.service';
 import { MealComponent } from './component/meal/meal.component';
 import { MealFilteredByCategoryComponent } from './component/meal-filtered-by-category/meal-filtered-by-category.component';
+import { FullMealComponent } from './component/full-meal/full-meal.component';
 
 @NgModule({
   declarations: [
@@ -82,7 +83,8 @@ import { MealFilteredByCategoryComponent } from './component/meal-filtered-by-ca
     LoginComponent,
     RegisterComponent,
     MealComponent,
-    MealFilteredByCategoryComponent
+    MealFilteredByCategoryComponent,
+    FullMealComponent
   ],
   imports: [
     MedlinModule,

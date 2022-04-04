@@ -1,1 +1,12 @@
-<p>meal-filtered-by-category works!</p>
+<h1 class="title">{{title$ | async}}</h1>
+
+<div class="container">
+	<div class="card"
+		matRipple
+		(click)="fullMeal(item.idMeal)"
+		*ngFor="let item of mealFilteredByCategory$ | async"
+	>
+		<img class="img-meal" src={{item.strMealThumb}} alt="">
+		<h3>{{item.strMeal}}</h3>
+	</div>
+</div>

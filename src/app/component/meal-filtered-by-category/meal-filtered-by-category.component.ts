@@ -1,3 +1,4 @@
+import { PlatformLocation } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Select, Store } from '@ngxs/store';
@@ -19,15 +20,18 @@ export class MealFilteredByCategoryComponent implements OnInit {
   @Select(RequestDataState.getHeader)
   title$: Observable<string>
   
-  constructor(private store: Store, private routs: Router) { }
+  category: string = this.pLocation.pathname.slice(6)
+  
+  constructor(private store: Store, private router: Router, private pLocation: PlatformLocation) { }
 
   ngOnInit(): void {
+    this.store.dispatch(new MealFilteredByCategoryAction(this.category))
   }
 
   fullMeal(id: number) {
     this.store.dispatch(new FullMealAction(id))
       .subscribe(res => {
-        this.routs.navigate([this.routs.url, id])
+        this.router.navigate([this.router.url, id])
       })
   }
 

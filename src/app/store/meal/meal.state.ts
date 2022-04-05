@@ -9,7 +9,7 @@ import * as MealAction from "./meal.action";
 export interface MealModel {
 	mealCategories: MealCategoriesInterface[],
 	filteredByCategory: MealsFilteredByCategoryInterface[]
-	fullMeal: FullMealInterface[]
+	fullMeal: FullMealInterface | null
 }
 
 @State<MealModel>({
@@ -17,7 +17,7 @@ export interface MealModel {
 	defaults: {
 		mealCategories: [],
 		filteredByCategory: [],
-		fullMeal: []
+		fullMeal: null
 	}
 })
 
@@ -33,6 +33,11 @@ export class MealState {
 	@Selector()
 	static mealFilteredByCategory(state: MealModel) {
 		return state.filteredByCategory
+	}
+
+	@Selector()
+	static fulMeal(state: MealModel) {
+		return state.fullMeal
 	}
 
 	@Action(MealAction.MealCategoriesAction)
@@ -70,7 +75,7 @@ export class MealState {
 				const data = Object.values(response.meals)
 
 				patchState({
-					fullMeal: data
+					fullMeal: data[0]
 				})
 			})
 	}

@@ -13,7 +13,7 @@ export interface RequstStateModel {
 	}
 })
 
-// Injectable()
+@Injectable()
 export class RequestDataState {
 	constructor() {}
 

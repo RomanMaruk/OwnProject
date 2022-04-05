@@ -1,9 +1,10 @@
+import { PlatformLocation } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { MealsFilteredByCategoryInterface } from 'src/app/model/meal/meal.interface';
-import { FullMealAction } from 'src/app/store/meal/meal.action';
+import { FullMealAction, MealFilteredByCategoryAction } from 'src/app/store/meal/meal.action';
 import { MealState } from 'src/app/store/meal/meal.state';
 import { RequestDataState } from 'src/app/store/requst-data.state';
 
@@ -18,17 +19,19 @@ export class MealFilteredByCategoryComponent implements OnInit {
   mealFilteredByCategory$: Observable<MealsFilteredByCategoryInterface[]>
   @Select(RequestDataState.getHeader)
   title$: Observable<string>
-  constructor(private store: Store, private routs: Router) { }
+  
+  category: string = this.pLocation.pathname.slice(6)
+  
+  constructor(private store: Store, private router: Router, private pLocation: PlatformLocation) { }
 
   ngOnInit(): void {
-    console.log('Routes ', this.routs.url);
-    
+    this.store.dispatch(new MealFilteredByCategoryAction(this.category))
   }
 
   fullMeal(id: number) {
     this.store.dispatch(new FullMealAction(id))
       .subscribe(res => {
-        this.routs.navigate([this.routs.url, id])
+        this.router.navigate([this.router.url, id])
       })
   }
 

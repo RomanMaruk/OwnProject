@@ -22,17 +22,11 @@ export class MealComponent implements OnInit {
   constructor(private store: Store, private router: Router) { }
 
   ngOnInit(): void {
-    this.store.dispatch([new MealCategoriesAction(), new GetHeaderAction(this.title)])
+    this.store.dispatch(new MealCategoriesAction())
   }
 
   takeCategories(filterCategories: MealCategoriesInterface) {
-    this.store.dispatch(new MealFilteredByCategoryAction(filterCategories.strCategory))
-      .subscribe((response) => {
-        
-        this.router.navigate(['meal', filterCategories.strCategory])
-      })
-
-    this.store.dispatch(new GetHeaderAction(filterCategories.strCategory))
+    this.router.navigate(['meal', filterCategories.strCategory])
   }
 
 }

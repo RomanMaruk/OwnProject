@@ -1,5 +1,5 @@
 export type MealCategoriesModel = {
-	categories: MealCategoriesInterface
+	categories: MealCategoriesInterface[]
 }
 
 export interface MealCategoriesInterface {

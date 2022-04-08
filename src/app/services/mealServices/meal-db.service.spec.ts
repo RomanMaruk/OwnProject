@@ -53,22 +53,7 @@ fdescribe('MealDBService', () => {
     
     spyOn(service, 'getAllMealCategories').and.returnValue(of(mealResponse))
 
-    service.getAllMealCategories().subscribe(res => {
-      response = res
-    })
+    service.getAllMealCategories().subscribe(res => response = res)
     expect(response).toEqual(mealResponse)
   })
-
-
-    // it('Should return Obsereveble response', () => {
-    //   const url = 'https://themealdb.com/api/json/v1/1/categories.php';
-    //   const dataMock = {}
- 
-
-    //   let response;
-
-    //   service.getAllMealCategories()
-
-    //   expect(httpMock.data).toBe(dataMock)
-    // })
 });

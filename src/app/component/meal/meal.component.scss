@@ -26,7 +26,15 @@
 		
 	}
 	.img-meal:hover {
-		filter: blur(5px);
+		// filter: blur(5px);
+
+
+		transform: rotateX(0deg);
+		position: absolute;
+		display: block;
+		animation: rotate 5s infinite;
+		width: 100%;
+		height: 80%;
 	}
 	h3 {
 		position: relative;
@@ -53,4 +61,18 @@
 	// 	text-align: center;
 	// 	bottom: 0;
 	// }
+}
+
+.flip {
+  height: 160px; 
+  border-radius: 5px;
+  transform: rotateX(45deg);
+  position: relative;
+  background: rgba(169,90,145,.8); 
+  animation: rotate 5s infinite;
+}
+@keyframes rotate {
+  30% {
+    transform: rotateX(45deg);
+  }
 }
